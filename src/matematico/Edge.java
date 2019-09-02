@@ -11,6 +11,12 @@ package matematico;
  */
 public class Edge {
     public Point3 p1, p2;
+    public Point4 p3d1, p3d2;
+
+    public Edge(Point4 p3d1, Point4 p3d2) {
+        this.p3d1 = p3d1;
+        this.p3d2 = p3d2;
+    }
 
     public Edge(Point3 p1, Point3 p2) {
         this.p1 = p1;
