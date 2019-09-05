@@ -27,8 +27,8 @@ import matematico.*;
  */
 public class KeyListenerExample extends JPanel implements KeyListener {
 
-    public static final int FRAME_WIDTH = 900;
-    public static final int FRAME_HEIGHT = 900;
+    public static final int FRAME_WIDTH = 600;
+    public static final int FRAME_HEIGHT = 600;
 
     static Point4[] pointsVec = new Point4[20];
     static Edge[] edgesVec = new Edge[20];
@@ -66,19 +66,21 @@ public class KeyListenerExample extends JPanel implements KeyListener {
             Edge e = edgesVec1;
             Point4 p1 = e.p3d1;
             Point4 p2 = e.p3d2;
-
-            int xr1 = w / 2 + (int) p1.x;
-            int xr2 = w / 2 + (int) p2.x;
-            int yr1 = h / 2 - (int) p1.y;
-            int yr2 = h / 2 - (int) p2.y;
-
+         
             //perspective transform
-            int xp1 = (int) ((d * xr1) / p1.z);
-            int yp1 = (int) ((d * yr1) / p1.z);
-            int xp2 = (int) ((d * xr2) / p2.z);
-            int yp2 = (int) ((d * yr2) / p2.z);
+            int xp1 = (int) ((d * p1.x) / p1.z);
+            int yp1 = (int) ((d * p1.y) / p1.z);
+            int xp2 = (int) ((d * p2.x) / p2.z);
+            int yp2 = (int) ((d * p2.y) / p2.z);
+                        
+            //las cordenadas despues de calcualar perspectiva
+            //las paso a modo java al centro del frame
+            int xr1 = w / 2 + (int) xp1;
+            int yr1 = h / 2 - (int) yp1;
+            int xr2 = w / 2 + (int) xp2;
+            int yr2 = h / 2 - (int) yp2;
 
-            g.drawLine(xp1, yp1, xp2, yp2);
+            g.drawLine(xr1, yr1, xr2, yr2);
         }
     }
 
