@@ -1,6 +1,6 @@
 # 3D Object Visualization in Java
 
-This Java program takes input from a coordinate file and creates a 3D object visualization in perspective for a 2D observer.
+This Java program takes input from a coordinate file and creates a 3D object visualization in perspective for a 2D observer. This project was made for the Computer Grapichs Subject at EAFIT on Medellín.
 
 ## Implementation
 
